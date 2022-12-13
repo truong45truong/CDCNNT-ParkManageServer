@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block style %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %}
+{% block content %}
+{% load static %}
+<form method="POST" class="d-flex flex-column">
+    {% csrf_token %}
+    <h1>Employer Log in</h1>
+    <div class="inset">
+    <p>
+      <label for="email">EMAIL</label>
+      <input type="text" name="email" id="email">
+    </p>
+    <p>
+      <label for="password">PASSWORD</label>
+      <input type="password" name="password" id="password">
+    </p>
+
+    </div>
+    <button class="btn btn-dark btn-login" type="submit">Sign in </button>
+  </form>
+{% endblock %}
