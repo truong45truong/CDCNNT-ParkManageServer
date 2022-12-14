@@ -32,7 +32,7 @@ class Qrcode(models.Model):
       url = "127.0.0.1/qrcode/"+token
       self.token = token
       qr_image = qrcode.make(url)
-      qr_offset = Image.new('RGB',(420,420),'white')
+      qr_offset = Image.new('RGB',(415,415),'white')
       qr_offset.paste(qr_image)
       files_name = f'{self.name}-{self.id}qr.png'
       stream = BytesIO()

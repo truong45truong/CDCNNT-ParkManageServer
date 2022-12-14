@@ -5,5 +5,5 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def qrcodePage(request,token):
-    qrcode = Qrcode.objects.get(token=token)
+    qrcode = Qrcode.objects.get(token=token,user=request.user)
     return render(request,'qrcode.html',{'qrcode':qrcode})

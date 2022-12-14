@@ -3,7 +3,7 @@ from .views import QrCodeViewSet
 
 qrcode = QrCodeViewSet.as_view({
     'get':'get_qrcode',
-    'post' : 'create'
+    'post' : 'post_qrcode'
 })
 
 urlpatterns = [
