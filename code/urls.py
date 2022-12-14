@@ -3,5 +3,5 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [
-    path('qrcode',views.qrcodePage,name='qrcode'),
+    path('qrcode/<str:token>',views.qrcodePage,name='qrcode'),
 ]

@@ -1,10 +1,11 @@
 from django.urls import path
 from .views import QrCodeViewSet
 
-get_qrcode = QrCodeViewSet.as_view({
-    'get':'get_qrcode'
+qrcode = QrCodeViewSet.as_view({
+    'get':'get_qrcode',
+    'post' : 'create'
 })
 
 urlpatterns = [
-    path('get-qrcode/',get_qrcode,name='get_qrcode'),
+    path('qrcode/',qrcode,name='get_qrcode'),
 ]

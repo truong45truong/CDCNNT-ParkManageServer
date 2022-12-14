@@ -8,19 +8,13 @@ from django.contrib.auth.backends import ModelBackend
 # Create your views here.
 
 def homePage(request):
-    @login_required
-    def homeWithUser(request,curentUser):
-        return render(request,'home.html',{ 'current' : curentUser })
-    def homeNoUser(request):
-        return render(request,'home.html')
     curentUser = request.user
-    print(request.user.is_anonymous)
     if request.POST.get('logout'):
         logoutUser(request)
-    if (curentUser != 'AnonymousUser'):
+    if (request.user.is_anonymous == False):
         return render(request,'home.html',{ 'current' : curentUser })
     else :
-        return render(request,'home.html')
+        return render(request,'home.html',{ 'current' : False })
         
 
 @login_required
