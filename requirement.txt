@@ -1,2 +1,16 @@
 cmd:
-1 -> 
+1 -> virtualenv env -> source env/bin/activate
+
+database
+
+1 -> python manage.py makemigrations -> python manage.py migrate
+tao models trong database 
+2 -> python manage.py createsuperuser 
+tao tk admin
+
+package : 
+pip install -r installed.txt
+
+runserver 
+
+1 -> python manage.py runserver ____ ( không hoặc host)
