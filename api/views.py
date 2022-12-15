@@ -22,6 +22,5 @@ class QrCodeViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
     @action(method=["POST"],detail=False,url_path="qrcode",url_name='post-qrcode')
     def post_qrcode(self,request, *args, **kwargs):
-        print(request.POST['name'])
-        queryset = Qrcode.objects.create(name=request.POST['name'])
+        queryset = Qrcode.objects.create(name=request.data['name'],token=request.data['token'])
         return Response("CORRET")
